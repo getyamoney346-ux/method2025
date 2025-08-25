@@ -1,46 +1,85 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>You've Been Pwned</title>
- <style>
- body {
- margin: 0;
-padding: 0;
-height: 100vh;
-width: 100vw;
-background-color: black;
-display: flex;
-13             flex-direction: column;
-14             justify-content: center;
-15             align-items: center;
-16             overflow: hidden;
-17             font-family: Arial, sans-serif;
-18         }
-19         .message {
-20             font-size: 8vw;
-21             font-weight: bold;
-22             color: red;
-23             text-align: center;
-24             animation: flash 0.5s infinite;
-25             text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
-26             margin-bottom: 30px;
-27         }
-28         .method {
-29             font-size: 6vw;
-30             font-weight: bold;
-31             color: lime;
-32             text-align: center;
-33             animation: flash 0.7s infinite;
-34             text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-35         }
-36         @keyframes flash {
-37             0%, 100% { opacity: 1; }
-50% { opacity: 0; }
-}
-</style>
-</head
-<body>
-<div class="message">YOU'VE BEEN PWNED</div>
-<div class="method">UR THE METHOD</div>
-</body>
-</html>
+
+    1 <!DOCTYPE html>
+    2 <html>
+    3 <head>
+    4     <title>System Compromised</title>
+    5     <style>
+    6         body {
+    7             margin: 0;
+    8             padding: 0;
+    9             height: 100vh;
+   10             width: 100vw;
+   11             background-image: url(
+      'https://images.unsplash.com/photo-1590070000746-6fc2a2847f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3
+      D%3D&auto=format&fit=crop&w=2000&q=80');
+   12             background-size: cover;
+   13             background-position: center;
+   14             display: flex;
+   15             flex-direction: column;
+   16             justify-content: center;
+   17             align-items: center;
+   18             overflow: hidden;
+   19             font-family: 'Arial Black', sans-serif;
+   20             position: relative;
+   21         }
+   22         body::before {
+   23             content: '';
+   24             position: absolute;
+   25             top: 0;
+   26             left: 0;
+   27             width: 100%;
+   28             height: 100%;
+   29             background: rgba(0, 0, 0, 0.7);
+   30         }
+   31         .graffiti {
+   32             font-size: 12vw;
+   33             font-weight: 900;
+   34             color: #ff0000;
+   35             text-align: center;
+   36             text-shadow:
+   37                 0 0 10px #ff0000, 
+   38                 0 0 20px #ff0000, 
+   39                 0 0 30px #ff0000,
+   40                 5px 5px 0 #000;
+   41             margin-bottom: 40px;
+   42             animation: drip 3s infinite;
+   43             position: relative;
+   44             z-index: 2;
+   45             letter-spacing: -5px;
+   46         }
+   47         .signature {
+   48             font-size: 4vw;
+   49             color: #00ff00;
+   50             text-align: center;
+   51             text-shadow:
+   52                 0 0 10px #00ff00,
+   53                 3px 3px 0 #000;
+   54             position: relative;
+   55             z-index: 2;
+   56             font-style: italic;
+   57         }
+   58         @keyframes drip {
+   59             0%, 100% { 
+   60                 transform: rotate(-2deg);
+   61                 text-shadow:
+   62                     0 0 10px #ff0000, 
+   63                     0 0 20px #ff0000, 
+   64                     0 0 30px #ff0000,
+   65                     5px 5px 0 #000;
+   66             }
+   67             50% { 
+   68                 transform: rotate(2deg);
+   69                 text-shadow:
+   70                     0 5px 10px #ff0000, 
+   71                     0 10px 20px #ff0000, 
+   72                     0 15px 30px #ff0000,
+   73                     5px 5px 0 #000;
+   74             }
+   75         }
+   76     </style>
+   77 </head>
+   78 <body>
+   79     <div class="graffiti">GET PWND</div>
+   80     <div class="signature">UR THE METHOD</div>
+   81 </body>
+   82 </html>
